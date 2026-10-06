@@ -5,8 +5,7 @@ name: Refresh heatmap
     - cron: "17 5 * * *"   # ~07:17 Geneva (summer), off the top of the hour
   workflow_dispatch: {}
   push:
-    branches: [main]
-    paths: ["scripts/**", ".github/workflows/heatmap.yml"]
+    branches: [main, activity]   # 'activity' = local Claude Code / git counts pushed from your Mac
 
 permissions:
   contents: write
@@ -26,10 +25,15 @@ jobs:
           cache: pip
           cache-dependency-path: scripts/requirements-ci.txt
       - run: pip install -r scripts/requirements-ci.txt
+      - name: Pull local activity (if exported)
+        run: |
+          mkdir -p data
+          git fetch -q --depth=1 origin activity && git show FETCH_HEAD:local-activity.json > data/local-activity.json || echo "no activity branch yet"
       - run: python scripts/fetch_contributions.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          EXTRA_USERS: ${{ secrets.EXTRA_USERS }}
       - run: python scripts/render_heatmap.py
       # Publish generated files to a single-commit 'output' branch so main's history stays clean.
       - name: Publish to output branch
