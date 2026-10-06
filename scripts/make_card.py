@@ -4,22 +4,22 @@ Edit INFO / PROJECTS and re-run. Static: no need to run in CI.
 """
 from theme import THEMES, esc, window, write
 
-EMBLEM = [  # compass rose — drift / travel / navigation
-    "            N",
-    "            ^",
-    "       .    |    .",
-    "    .       |       .",
-    "  .     \\   |   /     .",
-    " .       \\  |  /       .",
-    ".         \\ | /         .",
+EMBLEM = [  # compass rose — drift / travel / navigation. Axis = column 13 of 27; must stay mirror-symmetric.
+    "             N",
+    "             ^",
+    "        .    |    .",
+    "     .       |       .",
+    "   .     \\   |   /     .",
+    "  .       \\  |  /       .",
+    " .         \\ | /         .",
     "W <--------( + )--------> E",
-    ".         / | \\         .",
-    " .       /  |  \\       .",
-    "  .     /   |   \\     .",
-    "    .       |       .",
-    "       .    |    .",
-    "            v",
-    "            S",
+    " .         / | \\         .",
+    "  .       /  |  \\       .",
+    "   .     /   |   \\     .",
+    "     .       |       .",
+    "        .    |    .",
+    "             v",
+    "             S",
 ]
 
 INFO = [
@@ -73,13 +73,13 @@ def build(name, t):
         if frag:
             out.append(f'<g class="ln" style="animation-delay:{0.35+i*0.07:.2f}s" transform="translate(0 {top + (i+1)*LH})">{frag}</g>')
 
-    eh = len(EMBLEM) * 18
+    EC, ER = 8.6, 18                     # emblem cell width / row height
+    eh = len(EMBLEM) * ER
     ey = top + (len(lines) * LH - eh) / 2 + 14
     for r, row in enumerate(EMBLEM):
-        x = EX + (len(row) - len(row.lstrip())) * 8.4
-        s = row.strip()
-        out.append(f'<text class="em" style="animation-delay:{r*0.04:.2f}s" x="{x:.1f}" y="{ey + r*18:.1f}" font-size="14" '
-                   f'textLength="{len(s)*8.4:.1f}" lengthAdjust="spacingAndGlyphs" fill="{t["accent"]}" xml:space="preserve">{esc(s)}</text>')
+        glyphs = "".join(f'<text x="{EX + c*EC + EC/2:.1f}" y="{ey + r*ER:.1f}">{esc(ch)}</text>'
+                         for c, ch in enumerate(row) if ch != " ")
+        out.append(f'<g class="em" style="animation-delay:{r*0.04:.2f}s" font-size="14" text-anchor="middle" fill="{t["accent"]}">{glyphs}</g>')
 
     style = """.ln,.em{opacity:0;animation:in .45s ease-out forwards}
 .ln{transform-box:fill-box}

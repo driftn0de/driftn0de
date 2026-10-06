@@ -12,6 +12,7 @@ W = 860
 CELL, GAP = 11, 3
 STEP = CELL + GAP
 GX, GY = 76, 82          # grid origin (grid is centered in the 860px panel)
+LABELS = {"github": "GitHub contributions", "git": "local commits", "claude": "Claude Code prompts"}
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
 
@@ -41,7 +42,9 @@ def build(name, t, data):
                 labels.append(f'<text x="{GX + wi*STEP}" y="{GY-10}" font-size="11" fill="{t["dim"]}">{MONTHS[m-1]}</text>')
             last_month = m
         for dow, d in col:
-            tip = f'{d["count"]} contribution{"s" if d["count"] != 1 else ""} on {d["date"]}'
+            src = d.get("src", {})
+            parts = [f"{v} {LABELS[k]}" for k, v in src.items() if v]
+            tip = f'{d["date"]}: ' + (", ".join(parts) if parts else "no activity")
             cells.append(f'<rect class="c" style="animation-delay:{(wi+dow)*14}ms" x="{GX+wi*STEP}" y="{GY+dow*STEP}" '
                          f'width="{CELL}" height="{CELL}" rx="2.5" fill="{t["ramp"][d["level"]]}"><title>{tip}</title></rect>')
     for dow, lab in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
@@ -56,7 +59,7 @@ def build(name, t, data):
 
     best = s["best_day"]
     best_txt = f'{best["count"]} on {date.fromisoformat(best["date"]).strftime("%b %d")}' if best and best["count"] else "—"
-    facts = [("contributions", f'{s["total"]:,}'), ("active days", s["active_days"]),
+    facts = [("total activity", f'{s["total"]:,}'), ("active days", s["active_days"]),
              ("longest streak", f'{s["longest_streak"]}d'), ("current streak", f'{s["current_streak"]}d'),
              ("best day", best_txt)]
     fy = gy_end + 64
@@ -67,7 +70,11 @@ def build(name, t, data):
         footer.append(f'<g class="f" style="animation-delay:{1.2+i*0.1:.1f}s"><text x="{x}" y="{fy}" font-size="16" font-weight="700" fill="{t["accent"]}">{esc(str(v))}</text>'
                       f'<text x="{x}" y="{fy+18}" font-size="11" fill="{t["dim"]}">{k}</text></g>')
 
-    h = fy + 40
+    by = s.get("by_source", {})
+    if by:
+        line = "  ·  ".join(f"{LABELS[k]} {v:,}" for k, v in by.items() if v)
+        footer.append(f'<text class="f" style="animation-delay:1.8s" x="{GX}" y="{fy+46}" font-size="11" fill="{t["faint"]}">{esc(line)}</text>')
+    h = fy + (66 if by else 40)
     body = (f'<text x="28" y="56" font-size="13" fill="{t["dim"]}"><tspan fill="{t["accent"]}">driftn0de@github</tspan> ~ $ ./contributions.sh --last 365d</text>'
             + "".join(labels) + "".join(cells) + "".join(legend) + "".join(footer))
     style = """.c{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .35s cubic-bezier(.2,.8,.2,1) forwards}
