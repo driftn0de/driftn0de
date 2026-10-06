@@ -15,8 +15,8 @@
 <br><br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/driftn0de/driftn0de/output/heatmap-dark.svg">
-  <img alt="Contribution heatmap for the last 365 days, refreshed daily" src="https://raw.githubusercontent.com/driftn0de/driftn0de/output/heatmap-light.svg" width="860">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/driftn0de/driftn0de/raw/output/heatmap-dark.svg">
+  <img alt="Contribution heatmap for the last 365 days, refreshed daily" src="https://github.com/driftn0de/driftn0de/raw/output/heatmap-light.svg" width="860">
 </picture>
 
 <sub>self-generated SVGs · no third-party widgets · heatmap refreshed daily by GitHub Actions</sub>
