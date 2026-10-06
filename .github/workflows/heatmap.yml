@@ -29,6 +29,7 @@ jobs:
       - run: python scripts/fetch_contributions.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
       - run: python scripts/render_heatmap.py
       # Publish generated files to a single-commit 'output' branch so main's history stays clean.
       - name: Publish to output branch
