@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Runs the exporter daily at 06:45 (before the 07:17 heatmap refresh).
+     1. Replace REPO_PATH with where you cloned driftn0de/driftn0de
+     2. cp scripts/launchd/com.driftn0de.activity.plist ~/Library/LaunchAgents/
+     3. launchctl load ~/Library/LaunchAgents/com.driftn0de.activity.plist -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.driftn0de.activity</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>REPO_PATH/scripts/export_local_activity.py</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>45</integer></dict>
+  <key>StandardErrorPath</key><string>/tmp/driftn0de-activity.log</string>
+  <key>StandardOutPath</key><string>/tmp/driftn0de-activity.log</string>
+</dict>
+</plist>
