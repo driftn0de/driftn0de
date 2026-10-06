@@ -1,7 +1,9 @@
 """Fetch the last year of contributions -> data/contributions.json.
 
-Primary: GitHub GraphQL API (stable schema). In Actions the built-in GITHUB_TOKEN is enough.
-Fallback: the public calendar HTML fragment, used only when no token is set (local runs).
+Primary: the public calendar HTML fragment — the exact data your profile shows, including
+private contributions if "Include private contributions" is enabled. No token needed.
+Fallback: GraphQL API. Note the Actions GITHUB_TOKEN only sees *public* contributions, so set a
+PROFILE_TOKEN secret (fine-grained PAT, no scopes) if you want the fallback to match the profile.
 """
 import json
 import os
@@ -70,12 +72,14 @@ def stats(days):
 
 
 def main():
-    token = os.environ.get("GITHUB_TOKEN")
     try:
-        days = via_graphql(token) if token else via_html()
-    except Exception as e:  # noqa: BLE001 — try the other source before giving up
-        print("primary source failed:", e, file=sys.stderr)
-        days = via_html() if token else sys.exit(1)
+        days = via_html()
+    except Exception as e:  # noqa: BLE001 — markup changed or blocked: fall back to the API
+        token = os.environ.get("PROFILE_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        print("html source failed:", e, file=sys.stderr)
+        if not token:
+            sys.exit(1)
+        days = via_graphql(token)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps({"user": USER, "generated": date.today().isoformat(),
                                "stats": stats(days), "days": days}, indent=1))
