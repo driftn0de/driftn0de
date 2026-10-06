@@ -5,7 +5,7 @@ name: Refresh heatmap
     - cron: "17 5 * * *"   # ~07:17 Geneva (summer), off the top of the hour
   workflow_dispatch: {}
   push:
-    branches: [main, activity]   # 'activity' = local Claude Code / git counts pushed from your Mac
+    branches: [main]
 
 permissions:
   contents: write
@@ -18,8 +18,8 @@ jobs:
   heatmap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
