@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="437" viewBox="0 0 860 437" role="img" aria-label="driftn0de — neofetch">
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono','DejaVu Sans Mono',monospace;}
+.ln,.em{opacity:0;animation:in .45s ease-out forwards}
+.ln{transform-box:fill-box}
+@keyframes in{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.ln,.em{opacity:1;animation:none}}
+</style>
+<rect x="0.5" y="0.5" width="859" height="436" rx="10" fill="#010409" stroke="#30363d"/>
+<path d="M0.5 10.5a10 10 0 0 1 10-10h839a10 10 0 0 1 10 10V32.5H0.5z" fill="#161b22"/>
+<line x1="0.5" y1="32.5" x2="859.5" y2="32.5" stroke="#30363d"/>
+<circle cx="20" cy="16.5" r="5.5" fill="#ff5f57"/><circle cx="38" cy="16.5" r="5.5" fill="#febc2e"/><circle cx="56" cy="16.5" r="5.5" fill="#28c840"/>
+<text x="430.0" y="21" text-anchor="middle" font-size="12" fill="#7d8590">driftn0de — neofetch</text>
+<text x="28" y="56" font-size="13" fill="#7d8590"><tspan fill="#2ee6c9">driftn0de@github</tspan> ~ $ neofetch</text>
+<g class="ln" style="animation-delay:0.35s" transform="translate(0 83)"><text x="316" font-size="14" font-weight="700" fill="#2ee6c9">driftn0de<tspan fill="#c9d1d9">@</tspan>github</text></g>
+<g class="ln" style="animation-delay:0.42s" transform="translate(0 104)"><text x="316" font-size="13" fill="#484f58">----------------</text></g>
+<g class="ln" style="animation-delay:0.49s" transform="translate(0 125)"><text x="316" font-size="13" fill="#79c0ff">Role</text><text x="386.2" font-size="13" fill="#c9d1d9">backend-first, full-stack by necessity</text></g>
+<g class="ln" style="animation-delay:0.56s" transform="translate(0 146)"><text x="316" font-size="13" fill="#79c0ff">Focus</text><text x="386.2" font-size="13" fill="#c9d1d9">enterprise systems · privacy tooling · self-hosting</text></g>
+<g class="ln" style="animation-delay:0.63s" transform="translate(0 167)"><text x="316" font-size="13" fill="#79c0ff">Stack</text><text x="386.2" font-size="13" fill="#c9d1d9">TypeScript · NestJS · Next.js · PostgreSQL</text></g>
+<g class="ln" style="animation-delay:0.70s" transform="translate(0 188)"><text x="316" font-size="13" fill="#79c0ff"></text><text x="386.2" font-size="13" fill="#c9d1d9">C# · SQL Server · Java · Swift · React Native</text></g>
+<g class="ln" style="animation-delay:0.77s" transform="translate(0 209)"><text x="316" font-size="13" fill="#79c0ff">Infra</text><text x="386.2" font-size="13" fill="#c9d1d9">Linux homelab · local LLM inference · automation</text></g>
+<g class="ln" style="animation-delay:0.91s" transform="translate(0 251)"><text x="316" font-size="13" fill="#79c0ff">Projects</text></g>
+<g class="ln" style="animation-delay:0.98s" transform="translate(0 272)"><text x="316" font-size="13" fill="#484f58">»</text><text x="331.6" font-size="13" fill="#2ee6c9">AtlasPlan</text><text x="425.2" font-size="13" fill="#7d8590">trip planner · Expo + Laravel API + React admin</text></g>
+<g class="ln" style="animation-delay:1.05s" transform="translate(0 293)"><text x="316" font-size="13" fill="#484f58">»</text><text x="331.6" font-size="13" fill="#2ee6c9">KitchenAI</text><text x="425.2" font-size="13" fill="#7d8590">native iOS app · Swift</text></g>
+<g class="ln" style="animation-delay:1.12s" transform="translate(0 314)"><text x="316" font-size="13" fill="#484f58">»</text><text x="331.6" font-size="13" fill="#2ee6c9">claude-pad</text><text x="425.2" font-size="13" fill="#7d8590">macro pad → Claude Code bridge · Node.js</text></g>
+<g class="ln" style="animation-delay:1.19s" transform="translate(0 335)"><text x="316" font-size="13" fill="#484f58">»</text><text x="331.6" font-size="13" fill="#2ee6c9">homelab</text><text x="425.2" font-size="13" fill="#7d8590">privacy-first, local-first, automated backups</text></g>
+<g class="ln" style="animation-delay:1.33s" transform="translate(0 377)"><text x="316" font-size="13" fill="#79c0ff">Uptime</text><text x="386.2" font-size="13" fill="#c9d1d9">always improving, always pushing</text></g>
+<g class="ln" style="animation-delay:1.47s" transform="translate(0 419)"><rect x="316" y="-12" width="24" height="14" rx="2" fill="#0b3d3a"/><rect x="342" y="-12" width="24" height="14" rx="2" fill="#0f6b63"/><rect x="368" y="-12" width="24" height="14" rx="2" fill="#1aa594"/><rect x="394" y="-12" width="24" height="14" rx="2" fill="#2ee6c9"/><rect x="420" y="-12" width="24" height="14" rx="2" fill="#79c0ff"/><rect x="446" y="-12" width="24" height="14" rx="2" fill="#e3b341"/><rect x="472" y="-12" width="24" height="14" rx="2" fill="#ff7b72"/><rect x="498" y="-12" width="24" height="14" rx="2" fill="#7d8590"/></g>
+<text class="em" style="animation-delay:0.00s" x="136.8" y="119.5" font-size="14" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">N</text>
+<text class="em" style="animation-delay:0.04s" x="136.8" y="137.5" font-size="14" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">^</text>
+<text class="em" style="animation-delay:0.08s" x="94.8" y="155.5" font-size="14" textLength="92.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.    |    .</text>
+<text class="em" style="animation-delay:0.12s" x="69.6" y="173.5" font-size="14" textLength="142.8" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.       |       .</text>
+<text class="em" style="animation-delay:0.16s" x="52.8" y="191.5" font-size="14" textLength="176.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.     \   |   /     .</text>
+<text class="em" style="animation-delay:0.20s" x="44.4" y="209.5" font-size="14" textLength="193.2" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.       \  |  /       .</text>
+<text class="em" style="animation-delay:0.24s" x="36.0" y="227.5" font-size="14" textLength="210.0" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.         \ | /         .</text>
+<text class="em" style="animation-delay:0.28s" x="36.0" y="245.5" font-size="14" textLength="226.8" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">W &lt;--------( + )--------&gt; E</text>
+<text class="em" style="animation-delay:0.32s" x="36.0" y="263.5" font-size="14" textLength="210.0" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.         / | \         .</text>
+<text class="em" style="animation-delay:0.36s" x="44.4" y="281.5" font-size="14" textLength="193.2" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.       /  |  \       .</text>
+<text class="em" style="animation-delay:0.40s" x="52.8" y="299.5" font-size="14" textLength="176.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.     /   |   \     .</text>
+<text class="em" style="animation-delay:0.44s" x="69.6" y="317.5" font-size="14" textLength="142.8" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.       |       .</text>
+<text class="em" style="animation-delay:0.48s" x="94.8" y="335.5" font-size="14" textLength="92.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">.    |    .</text>
+<text class="em" style="animation-delay:0.52s" x="136.8" y="353.5" font-size="14" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">v</text>
+<text class="em" style="animation-delay:0.56s" x="136.8" y="371.5" font-size="14" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2ee6c9" xml:space="preserve">S</text>
+</svg>
